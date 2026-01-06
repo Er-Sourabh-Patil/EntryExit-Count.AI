@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PeopleCount.AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- 🔰 BRAND HEADER WITH LOGO -->
+<div class="brand-header">
+    <img src="{{ url_for('static', filename='images/peoplecount_ai_banner.png') }}"
+         alt="PeopleCount.AI Logo"
+         class="brand-logo">
+</div>
+
+<!-- 🔗 NAVIGATION BAR -->
+<div class="top-nav">
+    <a href="/">Dashboard</a>
+    <a href="/history">Previous Data</a>
+    <a href="/alerts">Alerts</a>
+    <a href="/charts">Charts</a>
+</div>
+
+<!-- 📄 PAGE CONTENT -->
+<div class="page-content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

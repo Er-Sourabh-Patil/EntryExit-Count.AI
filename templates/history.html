@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">Previous Data</h2>
+
+<table>
+    <tr><th>Date</th><th>IN</th><th>OUT</th></tr>
+    {% for d in data %}
+    <tr>
+        <td>{{ d.date }}</td>
+        <td>{{ d.in_count }}</td>
+        <td>{{ d.out_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">Alert History</h2>
+<ul>
+    {% for a in logs %}
+    <li>{{ a.timestamp }} – {{ a.message }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

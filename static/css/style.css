@@ -1,0 +1,105 @@
+body {
+    background: #0a0a0a;
+    color: white;
+    font-family: Arial;
+    margin: 0;
+}
+
+.top-nav {
+    background: #00ff99;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-nav a {
+    color: black;
+    margin-left: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.title-bar {
+    background: #0b7d2b;
+    padding: 15px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.camera-section {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.camera-feed {
+    width: 720px;
+    border: 3px solid #00ff99;
+}
+
+.counter-panel {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.counter-box {
+    width: 220px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.out-box { background: #8b0000; }
+.in-box { background: #006400; }
+
+.counter-value { font-size: 50px; }
+
+.status-bar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.fullscreen-btn {
+    float: right;
+    background: black;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+    padding: 5px 10px;
+}
+
+
+/* ===== BRAND HEADER ===== */
+.brand-header {
+    background: #0b0b0b;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.brand-logo {
+    max-width: 90%;
+    height: auto;
+    max-height: 120px;
+}
+
+/* ===== NAV BAR ===== */
+.top-nav {
+    background: linear-gradient(to right, #00ff99, #0b7d2b);
+    padding: 12px;
+    text-align: center;
+}
+
+.top-nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}

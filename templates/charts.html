@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">IN / OUT Chart</h2>
+<div style="width:80%;margin:auto;">
+    <canvas id="peopleChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+fetch("/chart-data")
+.then(r => r.json())
+.then(d => {
+    new Chart(document.getElementById("peopleChart"), {
+        type: "line",
+        data: {
+            labels: d.dates,
+            datasets: [
+                { label: "IN", data: d.in_counts, borderColor: "green" },
+                { label: "OUT", data: d.out_counts, borderColor: "red" }
+            ]
+        }
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title-bar">
+    PEOPLE COUNTING
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+</div>
+
+<div class="camera-section">
+    <h2>Live Camera</h2>
+    <img src="{{ url_for('video') }}" id="cameraFeed" class="camera-feed">
+</div>
+
+<div class="counter-panel">
+    <div class="counter-box out-box">
+        <div class="counter-label">OUT</div>
+        <div class="counter-value" id="outCount">0</div>
+    </div>
+
+    <div class="counter-box in-box">
+        <div class="counter-label">IN</div>
+        <div class="counter-value" id="inCount">0</div>
+    </div>
+</div>
+
+<div class="status-bar">
+    Status: <span class="status-running">Running</span>
+</div>
+
+<audio id="alertSound">
+    <source src="{{ url_for('static', filename='alert.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(() => {
+    fetch("/live-counts")
+    .then(r => r.json())
+    .then(data => {
+        document.getElementById("inCount").innerText = data.in;
+        document.getElementById("outCount").innerText = data.out;
+
+        if ((data.in - data.out) > 15) {
+            document.getElementById("alertSound").play();
+        }
+    });
+}, 1000);
+
+function toggleFullscreen() {
+    const elem = document.getElementById("cameraFeed");
+    if (!document.fullscreenElement) elem.requestFullscreen();
+    else document.exitFullscreen();
+}
+</script>
+
+{% endblock %}
